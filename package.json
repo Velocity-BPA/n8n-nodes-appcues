@@ -1,0 +1,82 @@
+{
+  "name": "n8n-nodes-appcues",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Appcues providing user management, event tracking, flow management, segment management, and bulk data operations for product-led growth automation.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-appcues.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-appcues#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-appcues/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "appcues",
+    "product-led-growth",
+    "user-onboarding",
+    "in-app-experiences",
+    "user-engagement",
+    "flow-management",
+    "nps",
+    "segments",
+    "automation",
+    "workflow"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/AppcuesApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Appcues/Appcues.node.js",
+      "dist/nodes/Appcues/AppcuesTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "prepublishOnly": "npm run build",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.30.0",
+    "prettier": "^3.2.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
